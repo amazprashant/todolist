@@ -123,7 +123,7 @@
                                                     </td>
                                                 
                                                     <td>
-                                                    {{ $result->category_id }}
+                                                    {{ $result->category_name }}
                                                     </td>
                                                     <td>
                                                     {{ $result->created_at }}

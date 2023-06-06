@@ -11,6 +11,9 @@ class Todo extends Model
     protected $table = 'todo';
     public static function getTodo()
     {
-        return self::all();
+        //return self::all();
+        return self::join('category', 'category.id', '=', 'todo.category_id')
+        ->select('todo.name', 'category.id','category.name AS category_name','category.created_at')
+        ->get();
     }
 }
