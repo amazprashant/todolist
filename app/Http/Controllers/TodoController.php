@@ -55,7 +55,7 @@ class TodoController extends Controller
 				if(!$objSave) {
 					DB::rollback();
 					Session::flash('error', trans("Something went wrong.")); 
-					return Redirect::route($this->sectionName.".index");
+					return Redirect::route("index");
 				}
 				DB::commit();
 				Session::flash('success',trans("Todo item has been added successfully"));
