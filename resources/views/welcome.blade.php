@@ -32,6 +32,11 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-12">
+                            @if (session('success'))
+                            <div id="flash-message" class="alert alert-success">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
                                 <div class="p-5">
                                 <div class="row">    
                                     <div class="col-lg-2 my-1">
@@ -157,5 +162,16 @@
 
 <!-- Custom scripts for all pages-->
 <script src="{{WEBSITE_URL}}js/sb-admin-2.min.js"></script>
+<script>
+    setTimeout(function() {
+        $('#flash-message').fadeOut('slow');
+    }, 1000); // 1 second delay
+
+    // OR
+
+    setTimeout(function() {
+        $('#flash-message').fadeOut('slow');
+    }, 2000); // 2 seconds delay
+</script>
 
 </html>
